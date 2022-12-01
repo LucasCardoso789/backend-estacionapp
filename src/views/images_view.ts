@@ -4,7 +4,7 @@
 //     render(image: Image) {
 //         return {
 //             id: image.id,
-//             url: `http://192.168.20.63:3333/uploads/${image.path}`,
+//             url: `http://192.168.20.63:3000/uploads/${image.path}`,
 //         };
 //     },
 
