@@ -1,10 +1,18 @@
 version: "3"
 
 services:
+  sqlite3:
+    image: nouchka/sqlite3
+    container_name: "sqlite3db"
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./db/database.db:/root/db/database.db
+    command: ".open root/db/database.db"
   app: 
     build: .
     ports: 
      - "3000:3000"
     command: yarn dev
-    volume: 
+    volumes: 
       - .:/usr/app
