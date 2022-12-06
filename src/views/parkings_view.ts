@@ -7,7 +7,6 @@ export default{
             nameParking: parking.nameParking,
             email: parking.email,
             phone: parking.phone,
-            nameContact: parking.nameContact,
             opening_hours: parking.opening_hours,
             countVacancyCar: parking.countVacancyCar,
             countVacancyMoto: parking.countVacancyMoto,
