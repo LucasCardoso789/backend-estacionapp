@@ -28,8 +28,8 @@ export default {
         const schema = Yup.object().shape({
             user: Yup.string().required(),
             password: Yup.string().required(),
-            id_parking: Yup.string().required(),
-            status: Yup.string().required(),
+            id_parking: Yup.number(),
+            status: Yup.boolean().required(),
         });
 
         await schema.validate(data, {
