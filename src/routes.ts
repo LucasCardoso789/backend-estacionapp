@@ -16,5 +16,6 @@ routes.post('/orphanages', upload.array('images'), OrphanagesController.create);
 routes.get('/bossparking', BossParkingController.index);
 routes.get('/bossparking/:id', BossParkingController.show);
 routes.post('/bossparking', BossParkingController.create);
+routes.put('/bossparking/:id', BossParkingController.update);
 
 export default routes;

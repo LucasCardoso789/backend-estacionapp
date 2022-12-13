@@ -66,7 +66,7 @@ export default {
             costMotoHour: Yup.number().required(),
             latitude: Yup.number().required(),
             longitude: Yup.number().required(),
-            otherService: Yup.string().required().max(300),
+            otherService: Yup.string().max(300),
         });
 
 

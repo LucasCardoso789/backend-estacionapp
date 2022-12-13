@@ -61,4 +61,27 @@ export default {
 
         return response.json(bossParkingView.render(bossParking));
     },
+
+    async update(request: Request, response: Response) {
+        const { id } = request.params;
+
+        const bossParkingRepository = getRepository(BossParking);
+        
+        const bossParking = await bossParkingRepository.findOneOrFail(id);
+
+        const {
+            id_parking,
+            status,
+        } = (request.body);
+
+
+        bossParking.id_parking = id_parking;
+        bossParking.status = status;
+
+        console.log(bossParking.status)
+
+        await bossParkingRepository.save(bossParking);
+
+        return response.status(204).json(bossParking);
+    },
 };
