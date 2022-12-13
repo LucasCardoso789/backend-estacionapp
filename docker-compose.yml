@@ -12,7 +12,7 @@ services:
   app: 
     build: .
     ports: 
-     - "3000:3000"
+     - "3333:3333"
     command: yarn dev
     volumes: 
       - .:/usr/app
