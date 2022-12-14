@@ -12,6 +12,7 @@ const upload = multer(uploadConfig);
 routes.get('/orphanages', OrphanagesController.index);
 routes.get('/orphanages/:id', OrphanagesController.show);
 routes.post('/orphanages', upload.array('images'), OrphanagesController.create);
+routes.put('/orphanages/:id', OrphanagesController.update);
 
 routes.get('/bossparking', BossParkingController.index);
 routes.get('/bossparking/:id', BossParkingController.show);

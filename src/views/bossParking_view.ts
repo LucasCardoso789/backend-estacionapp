@@ -5,6 +5,7 @@ export default{
         return {
             id: bossParking.id,
             user: bossParking.user,
+            password: bossParking.password,
             id_parking: bossParking.id_parking,
             status: bossParking.status,
         };

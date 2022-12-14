@@ -102,4 +102,55 @@ export default {
 
         return response.json(parkingView.render(parking));
     },
+    async update(request: Request, response: Response) {
+        const { id } = request.params;
+
+        const parkingsRepository = getRepository(Parking);
+        
+        const parking = await parkingsRepository.findOneOrFail(id);
+
+        const {
+            nameParking,
+            email,
+            phone,
+            nameContact,
+            opening_hours,
+            countVacancyCar,
+            countVacancyMoto,
+            costCarMonth,
+            costCarDay,
+            costCarHour,
+            costMotoMonth,
+            costMotoDay,
+            costMotoHour,
+            latitude,
+            longitude,
+            otherService
+            
+        } = (request.body);
+
+
+        parking.nameParking = nameParking;
+        parking.email = email;
+        parking.phone = phone;
+        parking.nameContact = nameContact;
+        parking.opening_hours = opening_hours;
+        parking.countVacancyCar = countVacancyCar;
+        parking.countVacancyMoto = countVacancyMoto;
+        parking.costCarMonth = costCarMonth;
+        parking.costCarDay = costCarDay;
+        parking.costCarHour = costCarHour;
+        parking.costMotoMonth = costMotoMonth;
+        parking.costMotoDay = costMotoDay;
+        parking.costMotoHour = costMotoHour;
+        parking.latitude = latitude;
+        parking.longitude = longitude;
+        parking.otherService = otherService;
+
+
+        await parkingsRepository.save(parking);
+
+        return response.status(204).json(parking);
+    },
+
 };
